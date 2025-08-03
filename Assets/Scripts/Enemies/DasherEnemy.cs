@@ -50,9 +50,6 @@ namespace Enemies
                 Tween.Scale(spriteRenderer.transform, scaleDown, 0.75f, ease: Ease.OutCubic)
                     .OnComplete(() =>
                     {
-                        if (attackArea == null) return;
-                        attackArea.enabled = true;
-
                         Vector3 scaleUp = new Vector3(_originalScale.x, _originalScale.y, _originalScale.z);
                         Tween.Scale(spriteRenderer.transform, scaleUp, 0.1f, ease: Ease.OutCubic);
                         Tween.Color(spriteRenderer, _originalColor, 0.1f, ease: Ease.OutCubic);
@@ -65,8 +62,6 @@ namespace Enemies
                             .OnComplete(() =>
                             {
                                 _attacking = false;
-                                if (attackArea == null) return;
-                                attackArea.enabled = false;
                             }, false);
                     }, false);
 

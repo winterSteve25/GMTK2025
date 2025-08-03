@@ -16,6 +16,7 @@ namespace Enemies
         protected override void OnHit(float damage)
         {
             if (_dying) return;
+            if (this == null) return;
 
             var seq = Sequence.Create()
                 .Chain(Tween.MaterialProperty(spriteRenderer.material, Progress, 1, 0.05f, Ease.InQuint))
@@ -27,6 +28,7 @@ namespace Enemies
                 seq.OnComplete(() =>
                 {
                     if (hp > 0) return;
+                    if (gameObject == null) return;
 
                     Destroy(gameObject);
                     var orb = ExpOrbManager.Current.GetOrb();

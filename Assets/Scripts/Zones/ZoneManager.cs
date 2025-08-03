@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Player;
 using PrimeTween;
 using UnityEngine;
 using Utils;
@@ -9,7 +10,8 @@ namespace Zones
     public class ZoneManager : MonoBehaviour
     {
         public static ZoneManager Current { get; private set; }
-
+        
+        public bool PlayerInZone { get; private set; } = true;
         public float zoneDeletionMultiplier = 1;
         public float zoneAdditionMultiplier = 1;
         
@@ -34,6 +36,8 @@ namespace Zones
                     i--;
                 }
             }
+
+            PlayerInZone = InAnyZone(PlayerMovement.Current.transform.position);
         }
 
         public void AddZoneRadius(float radius)

@@ -30,12 +30,12 @@ namespace Player
 
         private void Update()
         {
-            if (Zone.PlayerInZone && !_wasInZone)
+            if (ZoneManager.Current.PlayerInZone && !_wasInZone)
             {
                 _cooldown = 0;
             }
 
-            _wasInZone = Zone.PlayerInZone;
+            _wasInZone = ZoneManager.Current.PlayerInZone;
 
             if (!_wasInZone)
             {

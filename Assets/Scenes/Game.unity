@@ -4945,10 +4945,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rb: {fileID: 1820302607}
-  stretchAmount: 0.3
-  stretchSpeed: 8
-  returnSpeed: 12
-  minimumMovementThreshold: 0.1
 --- !u!58 &1820302606
 CircleCollider2D:
   m_ObjectHideFlags: 0

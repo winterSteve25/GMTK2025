@@ -39,7 +39,7 @@ namespace UI
             PlayerInput.Disabled = false;
             Tween.StopAll();
             Time.timeScale = 1;
-            TransitionManager.Instance().Transition("MainMenu", settings, 0);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

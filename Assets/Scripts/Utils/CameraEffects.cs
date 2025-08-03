@@ -80,7 +80,7 @@ namespace Utils
             ChromaticAberration = traumaClamped * traumaClamped * traumaClamped;
             trauma = traumaClamped;
 
-            var nowInZone = Zone.PlayerInZone;
+            var nowInZone = ZoneManager.Current.PlayerInZone;
             if (_wasInZone != nowInZone)
             {
                 _transitioningZoneState = true;
